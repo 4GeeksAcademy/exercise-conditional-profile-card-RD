@@ -33,15 +33,31 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
+          <h1>${variables.name} ${variables.lastName}</h1>
           <h2>Web Developer</h2>
           <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
-          </ul>
+          <ul class="${variables.socialMediaPosition}">
+       <li> ${
+         variables.twitter
+           ? `<li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>`
+           : ""
+       }</li>
+       <li> ${
+         variables.github
+           ? `<li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>`
+           : ""
+       }</li>
+        <li>${
+          variables.linkedin
+            ? `<li><a href="https://linkedin.com/in/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>`
+            : ""
+        }</li>
+        <li>${
+          variables.instagram
+            ? `<li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>`
+            : ""
+        }</li>
+      </ul>
         </div>
     `;
 }
@@ -60,12 +76,18 @@ window.onload = function() {
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
-    twitter: null,
-    github: null,
-    linkedin: null,
-    instagram: null,
-    name: null,
-    lastName: null,
+    //twitter: null,
+    twitter: "RudyDucatel",
+    //github: null,
+    github: "RDXXIV",
+    //linkedin: null,
+    linkedin: "rudy-ducatel",
+    //instagram: null,
+    instagram: "rudy_duca",
+    //name: null,
+    name: "Rudy",
+    //lastName: null,
+    lastName: "Ducatel",
     role: null,
     country: null,
     city: null
